@@ -1,9 +1,7 @@
-const prod_code = (number) => {};
+const FizzBuzz = (number) => {};
 
 describe('Fizz Buzz', () => {
-  it('', () => {
-    // Arrange
-    // Act
-    // Assert
+  it('Should say Fizz if Divisible By Three', () => {
+    FizzBuzz();
   });
 });
