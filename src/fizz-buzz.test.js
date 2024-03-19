@@ -14,6 +14,16 @@ const fizzBuzz = (number) => {
   }
 };
 
+const fizzBuzzArray = (number) => {
+  const arr = [];
+
+  for (let i = 1; i <= number; i++) {
+    arr.push(fizzBuzz(i));
+  }
+
+  return arr;
+};
+
 describe('Fizz Buzz', () => {
   it('Should say Fizz if Divisible By Three', () => {
     expect(fizzBuzz(3)).toBe('Fizz');
@@ -33,5 +43,23 @@ describe('Fizz Buzz', () => {
 
   it('should throw a TypeError if argument is not a number', () => {
     expect(() => fizzBuzz('Mr Func')).toThrow(TypeError);
+  });
+});
+
+describe('fizzBuzzArray', () => {
+  it('Should return an array', () => {
+    expect(fizzBuzzArray(3)).toBeInstanceOf(Array);
+  });
+
+  it('Should return an array with length equal to number', () => {
+    const numberArg = 5;
+
+    expect(fizzBuzzArray(numberArg)).toHaveLength(numberArg);
+  });
+
+  it('Should return array with expected elements', () => {
+    const expectedArray = [1, 2, 'Fizz', 4, 'Buzz'];
+
+    expect(fizzBuzzArray(5)).toEqual(expectedArray);
   });
 });
